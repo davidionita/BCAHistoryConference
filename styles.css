@@ -1,0 +1,38 @@
+.title {
+        border: 0;
+		border-bottom: solid 2px #f4f4f4;
+		margin: 2.25em 0;
+    }
+@media screen and (max-width: 1200px) {
+    .button-text {
+        display: none;
+    }
+    #buttonplus{
+    	text-align: center;
+    }
+}
+#footer{
+    padding-top: 5vh;
+}
+#thought_add{
+	padding-left:20%;
+	padding-right:20%;
+}
+#thlabel{
+	font-size:3vh;
+}
+#welcome{
+    text-align:center;
+}
+#sign_up {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+#admin {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+#success{
+    text-align: center;
+    margin-top: 4vh;
+}

@@ -1,13 +1,13 @@
 <?php
 # Localhost connection option
-/*$dsn = 'mysql:host=localhost:8889;dbname=historyconf';
-$username = 'histusr';
-$password = 'test123';*/
+$dsn = 'mysql:host=localhost:3306;dbname=bca-history-conference';
+$username = 'root';
+$password = 'root';
 
 #Live Version Connection Info
-$dsn = 'mysql:host=localhost;dbname=lepoopow_historyconf';
+/*$dsn = 'mysql:host=localhost;dbname=lepoopow_historyconf';
 $username = 'lepoopow_histuser';
-$password = 'historyconference2018!';
+$password = 'historyconference2018!';*/
 
 $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
 

@@ -43,7 +43,7 @@ switch ($action) {
         break;
 
     case 'show_create_account':
-        /*$first_name = '';
+        $first_name = '';
         $last_name = '';
         $email = '';
         $password = '';
@@ -52,7 +52,8 @@ switch ($action) {
         $error = false;
 
         include("create_account.php");
-        */
+
+        /*
         $email = '';
         $password = '';
         $error = true;
@@ -60,7 +61,7 @@ switch ($action) {
 
         include("login.php");
 
-        exit();
+        exit();*/
         break;
 
     case 'show_admin_page':
@@ -107,8 +108,8 @@ switch ($action) {
         $password = filter_input(INPUT_POST, 'password');
         $user = get_user($email);
         $error = false;
-        //if (($user != null) && (password_verify($password, $user[0]['password']))){
-        if (($user != null)){
+        if (($user != null) && (password_verify($password, $user[0]['password']))){
+        //if (($user != null)){
             $_SESSION['email'] = $email;
             $first_name = $user[0]['first_name'];
             $last_name = $user[0]['last_name'];
@@ -128,7 +129,7 @@ switch ($action) {
                 include("admin_page.php");
             }
             else{
-                $ended = true;
+                $ended = false;
                 include("workshop_signup.php");
             }
         }
@@ -146,7 +147,7 @@ switch ($action) {
         break;
 
     case'register':
-        /*$first_name = filter_input(INPUT_POST, 'first_name');
+        $first_name = filter_input(INPUT_POST, 'first_name');
         $last_name = filter_input(INPUT_POST, 'last_name');
         $email = filter_input(INPUT_POST, 'email');
         $password = filter_input(INPUT_POST, 'password');
@@ -172,13 +173,14 @@ switch ($action) {
             $email = '';
             $password = '';
             include("login.php");
-        }*/
-        $email = '';
+        }
+
+        /*$email = '';
         $password = '';
         $error = true;
         $message = "Registration has closed.";
 
-        include("login.php");
+        include("login.php");*/
 
         exit();
         break;
@@ -208,7 +210,7 @@ switch ($action) {
             include("admin_page.php");
         }
         else {
-            $ended = true;
+            $ended = false;
             include("workshop_signup.php");
         }
 
@@ -216,7 +218,7 @@ switch ($action) {
         break;
 
     case 'submit':
-        /*$error_msg = '';
+        $error_msg = '';
         $workshop_1 = filter_input (INPUT_POST, 'workshop_1_select');
         $workshop_2 = filter_input (INPUT_POST, 'workshop_2_select');
         $dinner = filter_input (INPUT_POST, 'dinner_select');
@@ -229,10 +231,10 @@ switch ($action) {
         }
         $dinner_choice;
         if($dinner == "on"){
-            $dinner_choice = true;
+            $dinner_choice = 1;
         }
         else{
-            $dinner_choice = false;
+            $dinner_choice = 0;
         }
 
         signup($workshop_1, $workshop_2, $dinner_choice, $_SESSION['email']);
@@ -255,7 +257,14 @@ switch ($action) {
             $workshop_2_name = $workshop_2_result[0]['name'];
         }
 
-        include("success.php");*/
+        if ($dinner_choice == 1) {
+            $dinner_choice_name = "Yes";
+        }
+        else {
+            $dinner_choice_name = "No";
+        }
+
+        include("success.php");
 
         exit();
         break;

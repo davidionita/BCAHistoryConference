@@ -12,6 +12,7 @@
         <div style="text-align:left;padding-left:30%;margin-top:7vh;margin-bottom:5vh;">
             <p>Session 1: <?php echo(htmlspecialchars($workshop_1_name))?></p>
             <p>Session 2: <?php echo(htmlspecialchars($workshop_2_name))?></p>
+            <p>Staying for dinner?: <?php echo(htmlspecialchars($dinner_choice_name))?></p>
         </div>
     <form class="col s12" name="action" action="index.php" method="POST" value="return">
         <input type="hidden" name="action" value="return">

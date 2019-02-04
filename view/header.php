@@ -8,7 +8,7 @@
 	<div id="welcome">
         <div class="row">
             <h3>BCA History Conference Workshop Sign Up</h3>
-            <p>May 18th, 1:30 - 6PM</p>
+            <p>Friday, April 12th, 1:30 - 6:00 PM</p>
             <?php if(isset($_SESSION['email'])){ ?>
             <h5><a href="permissionslip.pdf">Permission Slip</a> (Print and Hand into Mrs. Wallace)</h5>
             <br>

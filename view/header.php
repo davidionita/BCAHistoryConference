@@ -21,5 +21,8 @@
             <?php }?>
         </div>
 	</div>
+
+    <div class="divider"></div>
+    <br>
 </body>
 </html>

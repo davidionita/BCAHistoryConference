@@ -16,7 +16,7 @@
         <div id="sign_up">
             <div class="row">
                 <div class="col s12">
-                    <p>Please use the same information as when you filled out the google form.</p>
+                    <p>Please use the same information as when you filled out the Google Form.</p>
                     <p>To change your registration, type in the same name and email. Then choose new workshops and click submit.</p>
                     <p>Workshop Information found <a href="https://bcahistoryconference.weebly.com/topics.html">here</a>.</p>
                     <?php if($ended == true){  ?> <div style="text-align: center;"><h5>Registration Has Ended</h5></div> <?php }?>

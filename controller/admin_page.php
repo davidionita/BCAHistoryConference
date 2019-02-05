@@ -84,16 +84,25 @@
                             <td>
                                 <p><?php if ($dinner == true){ ?>Y <?php }else{?>N<?php }?></p>
                             </td>
+                            <td>
+                                <?php if ($checked_in == false){ ?>
+                                <button class="btn waves-effect waves-light btn-small" onclick="checkUser('<?php echo $user['id']?>')" name="action" value="check_in_user" <?php echo('id="check_'.$user['id'].'"') ?> >Out</button>
+                                <?php } else { ?>
+                                <button class="btn waves-effect waves-light btn-small" onclick="checkUser('<?php echo $user['id']?>')" name="action" value="check_out_user" <?php echo('id="check_'.$user['id'].'"') ?> >In</button>
+                                <?php } ?>
+                            </td>
+                            <!--
                             <form name="action" action="index.php" method="POST" value="check_in">
-                                <input type="hidden" name="user_sel" value="<?php echo($user['id']); ?>">
+                                <input type="hidden" name="user_sel" value="<?php /*echo($user['id']); */?>">
                                 <td>
-                                    <?php if ($checked_in == false){ ?>
-                                        <button class="btn waves-effect waves-light btn-small" type="submit" name="action" value="check_in_user">Out</button>
-                                    <?php } else{?>
-                                        <button class="btn waves-effect waves-light btn-small" type="submit" name="action" value="check_out_user">In</button>
-                                    <?php } ?>
+                                    <?php /*if ($checked_in == false){ */?>
+                                        <button class="btn waves-effect waves-light btn-small" type="submit" name="action" value="check_in_user" <?php /*echo('id="check_in_'.$user['id'].'"') */?>>Out</button>
+                                    <?php /*} else{*/?>
+                                        <button class="btn waves-effect waves-light btn-small" type="submit" name="action" value="check_out_user" <?php /*echo('id="check_out_'.$user['id'].'"') */?>>In</button>
+                                    <?php /*} */?>
                                 </td>
                             </form>
+                            -->
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
@@ -129,4 +138,30 @@
             }
         }
     </script>
+    <script>
+        function checkUser(user_id) {
+            console.log('called');
+
+            let post_action = $("#check_" + user_id).val();
+
+            console.log(user_id);
+            console.log(post_action);
+
+            let url = 'index.php?action='+post_action+'&user_sel='+user_id;
+            let request = new XMLHttpRequest();
+            request.open('GET', url, true);
+            request.send();
+
+            if (post_action === "check_in_user") {
+                $("#check_" + user_id).prop('value', 'check_out_user');
+                $("#check_" + user_id).html('In');
+            }
+            else {
+                $("#check_" + user_id).prop('value', 'check_in_user');
+                $("#check_" + user_id).html('Out');
+            }
+
+        }
+    </script>
+
 <?php include '../view/footer.php'; ?>

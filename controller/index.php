@@ -76,7 +76,7 @@ switch ($action) {
         break;
 
     case 'check_in_user':
-        $user_sel = filter_input(INPUT_POST, 'user_sel');
+        $user_sel = filter_input(INPUT_GET, 'user_sel');
         check_in($user_sel);
 
         $users = get_users();
@@ -84,13 +84,10 @@ switch ($action) {
         $workshops_2 = get_workshops(2);
         $user_sel = '';
 
-        include("admin_page.php");
-
-        exit();
         break;
 
     case 'check_out_user':
-        $user_sel = filter_input(INPUT_POST, 'user_sel');
+        $user_sel = filter_input(INPUT_GET, 'user_sel');
         check_out($user_sel);
 
         $users = get_users();
@@ -98,9 +95,6 @@ switch ($action) {
         $workshops_2 = get_workshops(2);
         $user_sel = '';
 
-        include("admin_page.php");
-
-        exit();
         break;
 
     case 'login':

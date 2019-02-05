@@ -47,7 +47,8 @@ function user_exists($first_name, $last_name, $email){
 
 function get_users(){
     $query = 'SELECT *
-              from user';
+              from user
+              order by last_name';
 
     global $db;
 

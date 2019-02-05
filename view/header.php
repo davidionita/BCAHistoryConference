@@ -10,7 +10,7 @@
             <h3>BCA History Conference Workshop Sign Up</h3>
             <p>Friday, April 12th, 1:30 - 6:00 PM</p>
             <?php if(isset($_SESSION['email'])){ ?>
-            <h5><a href="permissionslip.pdf">Permission Slip</a> (Print and Hand into Mrs. Wallace)</h5>
+            <h5><a href="permissionslip.pdf">Permission Slip</a> (Print and Hand in to Mrs. Wallace - Room 236)</h5>
             <br>
             <form class="col s12" name="action" action="index.php" method="POST" value="logout">
                 <input type="hidden" name="action" value="logout">

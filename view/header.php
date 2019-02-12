@@ -3,7 +3,7 @@
 
 <head>
 	<title>BCA History Conference</title>
-	<link rel="stylesheet" href="../styles.css">
+	<link rel="stylesheet" href="../static/css/styles.css">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- JQuery -->
@@ -26,7 +26,7 @@
             <h3>BCA History Conference Workshop Sign Up</h3>
             <p>Friday, April 12th, 1:30 - 6:00 PM</p>
             <?php if(isset($_SESSION['email'])){ ?>
-            <h5><a href="permissionslip.pdf">Permission Slip</a> (Print and Hand in to Mrs. Wallace - Room 236)</h5>
+            <h5><a href="../static/img/permissionslip.pdf">Permission Slip</a> (Print and Hand in to Mrs. Wallace - Room 236)</h5>
             <br>
             <form class="col s12" name="action" action="index.php" method="POST" value="logout">
                 <input type="hidden" name="action" value="logout">

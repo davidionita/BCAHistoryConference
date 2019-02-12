@@ -3,7 +3,7 @@
 
 <head>
 	<title>BCA History Conference</title>
-	<link rel="stylesheet" href="../static/css/styles.css">
+    <link rel=icon href=../static/img/favicon.png>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- JQuery -->
@@ -18,7 +18,7 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-
+    <link rel="stylesheet" href="../static/css/styles.css">
 </head>
 
 	<div id="welcome">

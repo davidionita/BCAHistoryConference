@@ -1,4 +1,3 @@
-<br>
 
 <div id="footer" class="footer-copyright" style="background-color: #26a69a;">
     <div class="container" style="padding-bottom: 10px; color: white;">

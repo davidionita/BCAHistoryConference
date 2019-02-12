@@ -1,11 +1,3 @@
-<html>
-<head>
-	<title>BCA History Conference</title>
-	<link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-</head>
-<body>
-
 <br>
 
 <div id="footer" class="footer-copyright" style="background-color: #26a69a;">
@@ -14,8 +6,6 @@
         <a class="white-text right" href="https://materializecss.com/">Made Using Materialize</a>
     </div>
 </div>
-
-</body>
 
 <style>
     html {
@@ -40,5 +30,6 @@
     }
 </style>
 
-</html>
+</body>
 
+</html>

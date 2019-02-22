@@ -24,17 +24,15 @@ function get_workshops($session) {
     }
 }
 
-function user_exists($first_name, $last_name, $email){
+function user_exists($email){
     global $db;
 
     $query = 'SELECT * from user
-              WHERE (first_name = :first_name AND last_name = :last_name) OR email = :email';
+              WHERE email = :email';
 
     try {
         $statement = $db->prepare($query);
         $statement->bindValue(':email', $email);
-        $statement->bindValue(':first_name', $first_name);
-        $statement->bindValue(':last_name', $last_name);
         $statement->execute();
         $result = $statement->fetchAll();
         $statement->closeCursor();

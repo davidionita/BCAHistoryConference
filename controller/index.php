@@ -153,7 +153,7 @@ switch ($action) {
         $school = filter_input(INPUT_POST, 'school');
         $advisor = filter_input(INPUT_POST, 'advisor');
 
-        if(user_exists($first_name, $last_name, $email)){
+        if(user_exists($email)){
             $error = true;
             $message = "User account already exists! Please log in.";
             $email = '';

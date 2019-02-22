@@ -122,16 +122,22 @@ function check_out($id){
     }
 }
 
-function create_account($first_name, $last_name, $email, $password_hash){
+function create_account($first_name, $last_name, $grade, $email, $password_hash, $school, $advisor){
     global $db;
 
     $query = 'INSERT INTO user
-                VALUES(null, :password_hash, :first_name, :last_name, :email, null, null, true, false, false)';
+                VALUES(null, :password_hash, :first_name, :last_name, :email, :grade, :school, :advisor, null, null, true, false, false)';
 
     try {
         $statement = $db->prepare($query);
+
+        if ($advisor == "")  $statement->bindValue(':advisor', null, PDO::PARAM_INT);
+        else $statement->bindValue(':advisor', $advisor);
+
+        $statement->bindValue(':school', $school);
         $statement->bindValue(':password_hash', $password_hash);
         $statement->bindValue(':email', $email);
+        $statement->bindValue(':grade', $grade);
         $statement->bindValue(':first_name', $first_name);
         $statement->bindValue(':last_name', $last_name);
         $statement->execute();

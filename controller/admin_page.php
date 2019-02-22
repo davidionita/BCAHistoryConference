@@ -46,6 +46,9 @@
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Email</th>
+                    <th>Grade</th>
+                    <th>School</th>
+                    <th>Advisor</th>
                     <th>Workshop 1</th>
                     <th>Workshop 2</th>
                     <th>Dinner</th>
@@ -57,18 +60,24 @@
                 <?php foreach ($users as $user) :
                     $first_name = $user['first_name'];
                     $last_name = $user['last_name'];
+                    $grade = ($user['grade'] == 0) ? "N/A" : $user['grade'];
                     $email = $user['email'];
+                    $school = $user['school'];
+                    $advisor = ($user['advisor'] == null) ? "N/A" : $user['advisor'];
                     $workshop_1 = get_workshop_by_id($user['workshop_1_id'], 1)[0]['name'] ?? "Not Signed Up";
                     $workshop_2 = get_workshop_by_id($user['workshop_2_id'], 2)[0]['name'] ?? "Not Signed Up";
                     $dinner = $user['dinner'];
                     $checked_in = $user['checked_in'];
                     ?>
                         <tr>
-                            <td width="10%"><?php echo htmlspecialchars($first_name); ?></td>
-                            <td width="10%"><?php echo htmlspecialchars($last_name); ?></td>
+                            <td width="7%"><?php echo htmlspecialchars($first_name); ?></td>
+                            <td width="7%"><?php echo htmlspecialchars($last_name); ?></td>
                             <td width="5%"><?php echo htmlspecialchars($email); ?></td>
-                            <td width="25%"><?php echo htmlspecialchars($workshop_1); ?></td>
-                            <td width="25%"><?php echo htmlspecialchars($workshop_2); ?></td>
+                            <td width="2%"><?php echo htmlspecialchars($grade); ?></td>
+                            <td width="10%"><?php echo htmlspecialchars($school); ?></td>
+                            <td width="8%"><?php echo htmlspecialchars($advisor); ?></td>
+                            <td width="20%"><?php echo htmlspecialchars($workshop_1); ?></td>
+                            <td width="20%"><?php echo htmlspecialchars($workshop_2); ?></td>
                             <td>
                                 <p><?php if ($dinner == true){ ?>Y <?php }else{?>N<?php }?></p>
                             </td>

@@ -49,6 +49,8 @@ switch ($action) {
         $password = '';
         $message = '';
         $passconfirm = '';
+        $school = '';
+        $advisor = '';
         $error = false;
 
         include("create_account.php");
@@ -143,10 +145,13 @@ switch ($action) {
     case'register':
         $first_name = filter_input(INPUT_POST, 'first_name');
         $last_name = filter_input(INPUT_POST, 'last_name');
+        $grade = filter_input(INPUT_POST, 'grade');
         $email = filter_input(INPUT_POST, 'email');
         $password = filter_input(INPUT_POST, 'password');
         $passconfirm = filter_input(INPUT_POST, 'passconfirm');
         $password_hash = password_hash($password, PASSWORD_BCRYPT);
+        $school = filter_input(INPUT_POST, 'school');
+        $advisor = filter_input(INPUT_POST, 'advisor');
 
         if(user_exists($first_name, $last_name, $email)){
             $error = true;
@@ -161,7 +166,7 @@ switch ($action) {
             include("create_account.php");
         }
         else{
-            create_account($first_name, $last_name, $email, $password_hash);
+            create_account($first_name, $last_name, $grade, $email, $password_hash, $school, $advisor);
             $error = true;
             $message = "Registration success! Please log in.";
             $email = '';

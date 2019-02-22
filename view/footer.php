@@ -1,5 +1,5 @@
 
-<div id="footer" class="footer-copyright" style="background-color: #26a69a;">
+<div id="footer" class="footer-copyright">
     <div class="container" style="padding-bottom: 10px; color: white;">
         &copy; 2019 BCA History Conference
         <a class="white-text right" href="https://materializecss.com/">Made Using Materialize</a>
@@ -19,7 +19,7 @@
     }
 
     #footer {
-        background-color: orange;
+        background-color: #26a69a;
         position: absolute;
         left: 0;
         bottom: 0;
